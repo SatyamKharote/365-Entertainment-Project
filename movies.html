@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/movie.css" />
+    <script src="https://kit.fontawesome.com/240c369354.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navabar -->
+    <header>
+        <nav class="mynavbar">
+            <a href="index.html"><img src="365ep.jpg" alt="Loading Image" class="mainlogo" /></a>
+            <ul class="mynavlist">
+                <li class="mynav-item" id="item1">
+                    <a href="" class="mynav-links">Movies</a>
+                </li>
+                <li class="mynav-item" id="item2">
+                    <a href="" class="mynav-links">TV Series</a>
+                </li>
+                <li class="mynav-item" id="item3">
+                    <a href="" class="mynav-links">Audio</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- End Navbar -->
+
+    <!-- Image Slider -->
+    <div class="content">
+        <div class="images">
+            <img src="images/darkknight.jpg " alt="Loading images" />
+            <img src="images/tiger.jpg" alt="Loading images" />
+            <img src="images/aquaman.jpg" alt="Loading images" />
+            <img src="images/war.jpg" alt="Loading images" />
+            <img src="images/dracula.jpg" alt="Loading images" />
+        </div>
+        <div onclick="side_slide(-1)" class="slide left">
+            <span class="fas fa-angle-left"></span>
+        </div>
+        <div onclick="side_slide(1)" class="slide right">
+            <span class="fas fa-angle-right"></span>
+        </div>
+
+        <div class="btm-sliders">
+            <span onclick="btm_slide(1)"></span>
+            <span onclick="btm_slide(2)"></span>
+            <span onclick="btm_slide(3)"></span>    
+            <span onclick="btm_slide(4)"></span>
+            <span onclick="btm_slide(5)"></span>
+        </div>
+    </div>
+    <!-- End Image Slider -->
+
+    <!-- Genre button -->
+    <div class="movie-menu">
+        <button class="menu-button" id="dropbtn"><span id="genreText">Genre</span></button>
+        <div class="dropdown-menu">
+            <a onclick="getMediaPosters(this.text)">All</a>
+            <a onclick="getMediaPosters(this.text)">Action</a>
+            <a onclick="getMediaPosters(this.text)">Drama</a>
+            <a onclick="getMediaPosters(this.text)">Sci-Fi</a>
+            
+        </div>
+        <div onclick="side_slide(-1)" class="dropdown-image">
+            <span class="fa fa-caret-down"></span>
+        </div>
+    </div>
+
+    <!-- Search button -->
+    <div class="menu-text">
+        <input type="text" class="search" id="mysearch" placeholder="Search your favourite movie title" oninput="updateResults()">
+            <span class="fa fa-search"></span>
+    </div>  
+    
+    <!-- Popular in Action Section -->
+    <div class="film-section">
+        <div class="film-section-cards" id="movies-action">
+                <div class="film-section-card" >
+                    <img src="images/Action/ironman.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            Ironman 3
+                        </h4>
+                        <p> Superhero, Action, English, Hindi, 2013</p>
+                    </div>
+                </div>
+                <div class="film-section-card" >
+                    <img src="images/Action/junglee.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            Junglee
+                        </h4>
+                        <p>Action, Wild, Comedy, Hindi, 2019</p>
+                    </div>
+                </div>
+                <div class="film-section-card" >
+                    <img src="images/Action/bang bang.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            Bang Bang
+                        </h4>
+                        <p>Action, Thriller, Hindi, 2014 </p>
+                    </div>
+                </div>
+                <div class="film-section-card" >
+                    <img src="images/Action/singham returns.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            Singham Returns
+                        </h4>
+                        <p> Action, Comedy, Hindi, 2014 </p>
+                    </div>
+                </div>
+                <div class="film-section-card" >
+                    <img src="images/Action/doctor strange.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            Doctor Strange
+                        </h4>
+                        <p> Superhero, Action, English, Hindi, 2016 </p>
+                    </div>
+                </div>
+                <div class="film-section-card" >
+                    <img src="images/Action/aiyaary.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            Aiyaary
+                        </h4>
+                        <p>Action, Thriller, Hindi, 2018 </p>
+                    </div>
+                </div>
+                <div class="film-section-card" >
+                    <img src="images/Action/avenger.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            The Avengers
+                        </h4>
+                        <p>Superhero, Action, English, Hindi, 2012 </p>
+                    </div>
+                </div>
+                <div class="film-section-card" >
+                    <img src="images/Action/khuda_haafiz.webp" alt="" />
+                    <div class="film-section-card-desc">
+                        <h4 class="film-name">
+                            Khuda Haafiz
+                        </h4>
+                        <p>Action, Romance, Hindi, 2020 </p>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Popular in Drama Section -->
+        <div class="film-section-cards" id="movies-drama">
+            <div class="film-section-card">
+                <img src="images/Drama/shaadistan.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Shaadisthan
+                    </h4>
+                    <p> Musical, Drama, Hindi, 2021 </p>
+                </div>
+            </div>
+            <div class="film-section-card" >
+                <img src="images/Drama/chjichhore.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Chhichhore
+                    </h4>
+                    <p> Drama, Comedy, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/angrezi_medium.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Angrezi Medium
+                    </h4>
+                    <p> Drama, Comedy, Hindi, 2019</p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/sadak_2.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                       Sadak 2
+                    </h4>
+                    <p>Drama, Romantic, Hindi, 2019</p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/mission_mangal.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Mission Mangal
+                    </h4>
+                    <p>Drama, Science, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/chhapaak.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Mulan
+                    </h4>
+                    <p> Drama, Emotional, Hindi, 2020 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/helicopter_eela.webp" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Helicopter eela
+                    </h4>
+                    <p> Drama, Comedy, Hindi, 2018 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/baadshaho.webp" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Baadshaho
+                    </h4>
+                    <p> Drama, Action, Hindi, 2017 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/haraamkhor.webp" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Haraamkhor
+                    </h4>
+                    <p> Drama, Comedy, Hindi, 2017 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Drama/bajrangi_bhaijaan.webp" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Grahan
+                    </h4>
+                    <p> Drama, Emotional, Hindi, 2015</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="images/Drama/highway.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Highway
+                    </h4>
+                    <p> Drama, Emotional, Hindi, 2014</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="images/Drama/the_sniper.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The Sniper
+                    </h4>
+                    <p>Drama, Thriller, Hindi, 2021</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="images/Drama/bahar.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Bahar
+                    </h4>
+                    <p>Drama, Love, Hindi, 2021</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="images/Drama/dum_lagade_aaj.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Dum Lagade AAj
+                    </h4>
+                    <p>Drama, Comedy, Hindi, 2017</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="images/Drama/love_sonia.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Love Sonia
+                    </h4>
+                    <p>Drama, Thriller, Hindi, 2018</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="images/Drama/mukti_bhavan.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Mukti Bhawan
+                    </h4>
+                    <p>Drama, Thriller, Hindi, 2016</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular in Sci-Fi Section -->
+        <div class="film-section-cards" id="movies-scifi">
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/wandavision.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        WandaVision
+                    </h4>
+                    <p>Superhero, Science Fiction, 2021 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/agentcarter.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Agent Carter
+                    </h4>
+                    <p> Action, Science Fiction, 2015 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/legends.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        LEGENDS
+                    </h4>
+                    <p> Superhero, Science Fiction, 2021 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/thebadbatch.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The Bad Batch
+                    </h4>
+                    <p> Action, Science Fiction, 2021 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/starwars.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Star Wars: Rebeles
+                    </h4>
+                    <p> Action, Science Fiction, Kids, 2014 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/westworld.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        WestWorld
+                    </h4>
+                    <p> Science Fiction, Drama, 2016 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/isle_of_dog.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Isle of Dogs
+                    </h4>
+                    <p>Science Fiction, Comedy, English, 2018 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/starwars_the_last_jedi.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Star Wars: The Last Jedi
+                    </h4>
+                    <p> Science Fiction, Action, English, Hindi, 2017 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/avatar.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Avatar
+                    </h4>
+                    <p>Science Fiction, Action, English, Hindi, 2009 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/kong_vs_godzilla.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Godzilla vs Kong
+                    </h4>
+                    <p> Science Fiction, Action, English, Hindi, 2021 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/coma.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Coma
+                    </h4>
+                    <p> Science Fiction, Thriller, English, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/tenet.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Tenet
+                    </h4>
+                    <p>Science Fiction, Action, English, Hindi, 2020 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/bloodshot.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Bloodshot
+                    </h4>
+                    <p> Science Fiction, Action, English, Hindi, 2020 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/the_silence.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The Silence
+                    </h4>
+                    <p> Science Fiction, Thriller, English, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/rampage.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Rampage
+                    </h4>
+                    <p>Science Fiction, Adventure, English, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card" >
+                <img src="images/Sci-Fi/alien.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Alien: Covenant
+                    </h4>
+                    <p> Science Fiction, Thriller, English, Hindi, 2017 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/bumblebee.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Bumblebee
+                    </h4>
+                    <p>Science Fiction, Robot, English, Hindi, 2018 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/arrival.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Arrival
+                    </h4>
+                    <p> Science Fiction, Thriller, English, Hindi, 2016 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/extinction.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Extinction
+                    </h4>
+                    <p> Science Fiction, Action, English, 2018 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/annihilation.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Extinction
+                    </h4>
+                    <p> Science Fiction, Horror, English, 2018 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/passengers.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Passengers
+                    </h4>
+                    <p> Science Fiction, Romance, Hindi, 2016 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/the_predator.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The Predator
+                    </h4>
+                    <p> Science Fiction, Action, English, Hindi, 2018 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/the_5th_wave.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The 5th Wave
+                    </h4>
+                    <p> Science Fiction, Thriller, English, 2016 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="images/Sci-Fi/the_martian.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The Martian
+                    </h4>
+                    <p> Science Fiction, Space, English, 2015 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- footer -->
+<footer>
+    <div class="copyright">
+        <img src="365ep.jpg" alt="Loading Image" class="mainlogo" />
+        <p>Powered by 365 Entertainment Portal 2019. All Rights Reserved.</p>
+    </div>
+</footer>
+<!-- end footer -->
+ 
+<!-- JavaScript  -->
+ <script src="./js/main.js"> </script>
+</body>
+</html>
